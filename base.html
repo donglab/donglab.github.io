@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+html {
+  height: 100%;
+  margin: 0px;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  z-index: 10;
+  overflow: hidden;
+  background-color: #F0F0F0;
+  border-bottom: 1px solid #D3D3D3;
+  <!--margin: 0px 0px 0px 0px;--top,right,bottom and left order-->
+  <!--https://developer.mozilla.org/en-US/docs/Web/CSS/z-index-->
+}
+
+.navbar a {
+  float: left;
+  color: #000;
+  display: block;
+  text-align: center;
+  padding: 16px 18px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #BEBEBE;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #BEBEBE;
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+   width: 100%;
+   background-color: #808080;
+   color: white;
+   text-align: center;
+}
+
+ .fa-twitter {
+    color: #FFFFFF;
+  }
+.fa-twitter:hover {
+    color: #505050;
+}
+ .fa-facebook {
+    color: #FFFFFF;
+  }
+.fa-facebook:hover {
+    color: #505050;
+}
+ .fa-instagram {
+    color: #FFFFFF;
+  }
+.fa-instagram:hover {
+    color: #505050;
+}
+ .fa-github {
+    color: #FFFFFF;
+  }
+.fa-github:hover {
+    color: #505050;
+}
+.content {
+  padding: 0px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 0px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 0px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 10%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 80%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+#Left{
+  width:47%;
+  float: left;
+  display:inline-block;
+}
+#Right{
+  width:47%;
+  float: right;
+  display:inline-block;
+}
+
+/* Create three equal columns that floats next to each other */
+.subcol {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    display:inline-block;
+}
+
+/* Clear floats after the columns */
+.subrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+</style>
+
+  {% block headContent %}
+  {% endblock %}
+
+
+  </head>
+  <body>
+  <div class="navbar" id="topnav">
+      <a href="/">Home</a>
+      <a href="./research.html">Research</a>
+      <a href="/people/">People</a>
+      <a href="/publication/">Publications</a>
+      <a href="/resource/">Resources</a>
+      <a href="/position/">Join Us</a>
+	  <a href="/contact/" style="float:right" >Contact</a>
+  </div>
+  <div class="content">
+      <img src="./static/images/test.png" style="width:100%; height:auto; margin:0 auto;"  alt text="something to describe this image" ></img>
+  </div>
+  
+  {% block content %}
+  {% endblock %}
+   
+  
+  <div class="footer">
+     <p align="center">&copy; 2020 LIU LAB@IUSM. All rights reserved. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 <a href="http://www.github.com" target="_blank"><i class="fa fa-github" style="font-size:32px;" aria-hidden="true"></i></a> &nbsp;&nbsp;
+     <a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter" style="font-size:32px;" aria-hidden="true"></i></a> &nbsp;&nbsp;
+	 <a href="http://www.facebook.com" target="_blank"><i class="fa fa-facebook" style="font-size:32px;" aria-hidden="true"></i></a>&nbsp;&nbsp;
+	 <a href="http://www.instagram.com" target="_blank"><i class="fa fa-instagram" style="font-size:32px;" aria-hidden="true"></i></a>
+    </p>
+  </div>
+  
+<script>
+window.onscroll = function() {myFunction()};
+
+var topnav = document.getElementById("topnav");
+var sticky = topnav.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    topnav.classList.add("sticky")
+  } else {
+    topnav.classList.remove("sticky");
+  }
+}
+</script>
+
+  
+  </body>
+</html>
