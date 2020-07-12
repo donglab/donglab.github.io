@@ -1,0 +1,1 @@
+borrow from http://www.menucool.com/javascript-image-slider
